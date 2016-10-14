@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>资讯</title>
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <link rel="stylesheet" href="__PUBLIC__/germany/css/layout.debug.css">
+</head>
+<body>
+<div class="search-wrap">
+    <form action="" method="post">
+            <input type="text" name="keyWord" placeholder="关键词搜索" />
+            <img class="search-icon" src="__PUBLIC__/germany/images/search-icon.png" alt="搜索图片">
+    </form>
+</div>
+<div class="browse">
+    <div class="browse-explain">
+        <div class="tag f-l">
+            供<span class="diamonds diamonds-yellow"></span>
+            求<span class="diamonds diamonds-green"></span>
+        </div>
+        <div class="browse-click f-r">
+            <a href="javascript:">
+                分类浏览<i></i>
+            </a>
+            <ul>
+                <li></li>
+                {volist name="categories" id="vo"}
+                    <li><a href="{:url('getList',array('cate'=>$vo['category'],'type'=>$type))}">{$vo['category']}</a></li>
+                {/volist}
+            </ul>
+        </div>
+    </div>
+    <div class="message-lists">
+        {volist name="info" id="vo"}
+        <a class="item" href="{:url('getDetail',array('id'=>$vo['doc_id']))}">
+            <div class="diamonds-large diamonds-yellow f-l">{$vo['category']}</div>
+            <p class="item-text f-r line-clamp">{$vo['title']}</p>
+        </a>
+        {/volist}
+    </div>
+</div>
+</body>
+</html>

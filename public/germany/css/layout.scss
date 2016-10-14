@@ -1,0 +1,370 @@
+body{
+  font-family: "Microsoft YaHei","\5FAE\8F6F\96C5\9ED1","Hiragino Sans GB","华文细黑","arial","sans-serif";
+  background-color: #FCFCFC;
+}
+*{
+  box-sizing: border-box;
+}
+img{
+  max-width: 100%;
+}
+i{
+  font-style: normal;
+}
+input,button{
+  border: none;
+  background-color: transparent;
+}
+@mixin button ($h) {
+  height: $h;
+  line-height: $h;
+  text-align: center;
+}
+.line-clamp{
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.guide-wrap{
+  height: 0;
+}
+.vw100 {
+  width: 100vw;
+}
+
+.germany-info{
+  position: relative;
+
+  .link > img {
+    position: absolute;
+    top: 64px;
+    right: 95px;
+    width: 175px;
+    height: auto;
+  }
+}
+
+.china-info{
+  @extend .germany-info;
+  top: -81px;
+
+  .link > img {
+    position: absolute;
+    top: 121px;
+    left: 70px;
+  }
+}
+
+.release{
+  position: relative;
+  top: -141px;
+  text-align: center;
+
+  .content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    h3 {
+      padding-bottom: 30px;
+      font-size: 28px;
+      color: #747474;
+    }
+    .button {
+      display: block;
+      width: 500px;
+      border-radius: 6px;
+      background-color: #FFCE03;
+
+      > img {
+        position: relative;
+        top: 3px;
+        width: 33px;
+        height: 33px;
+      }
+
+      button{
+        @include button(83px);
+        font-size: 38px;
+      }
+    }
+  }
+}
+
+//引导页结束
+
+.search-wrap{
+  padding: 20px;
+  background-color: #F3F3F3;
+
+  form{
+    position: relative;
+    display: block;
+    width: 100%;
+    border: 1px solid #C9C9C9; /*no*/
+    background-color: #fff;
+  }
+
+  input:focus + img{
+    display: none;
+  }
+  input:focus{
+    &::-webkit-input-placeholder{
+      color: #fff;
+    }
+  }
+
+  input{
+    @include button(58px);
+    font-size: 28px;
+    width: 100%;
+  }
+
+  .search-icon{
+    position: absolute;
+    left: 34%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+  }
+}
+
+.f-l{
+  float: left;
+}
+.f-r{
+  float: right;
+}
+.diamonds{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.diamonds-large{
+  width: 72px;
+  height: 72px;
+}
+.diamonds-yellow{
+  background-color: #EDAF33;
+}
+.diamonds-green{
+  background-color: #91CB66;
+}
+.browse{
+  padding-left: 18px;
+  font-size: 22px;
+  background-color: #FCFCFC;
+}
+.browse-explain{
+  padding-right: 32px;
+  padding-top: 28px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid #DCDCDC; /*no*/
+  color: #777;
+  &:after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+
+  .diamonds{
+    vertical-align: middle;
+    margin-left: 7px;
+  }
+}
+.browse-click{
+  display: block;
+  position: relative;
+  > a {
+    color: #777;
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:hover + ul {
+      display: block;
+    }
+  }
+  i{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 12px;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 8px solid #777;
+  }
+  ul {
+    display: none;
+    position: absolute;
+    right: -20px;
+    top: 45px;
+    padding-top: 42px;
+    padding-bottom: 42px;
+    width: 229px;
+    height: 293px;
+    font-size: 28px;
+    text-align: center;
+    background-color: rgba(0,0,0,.7);
+    border-radius: 6px;
+
+    li {
+      padding-bottom: 43px;
+      &:first-child{
+        position: absolute;
+        display: block;
+        top: -54px;
+        right: 14px;
+        width: 0;
+        height: 0;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-bottom: 11px solid #000;
+        opacity: .7;
+      }
+      &:last-child{
+        padding-bottom: 0;
+      }
+
+      a {
+        color: #fff;
+      }
+    }
+  }
+}
+.vertical-center{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -webkit-align-items: center;
+}
+.message-lists{
+  .item{
+    display: block;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #DCDCDC; /*no*/
+    overflow: hidden;
+  }
+  .diamonds-large{
+    @extend .vertical-center;
+    padding: 0 12px;
+    line-height: 30px;
+    color: #fff;
+  }
+  .item-text{
+    width: 550px;
+    padding-left: 25px;
+    padding-right: 32px;
+    height: 72px;
+    font-size: 28px;
+    line-height: 38px;
+    font-weight: bold;
+    color: #282828;
+  }
+}
+
+article{
+  font-size: 28px;
+  color: #777;
+}
+.article-title-wrap{
+  padding-bottom: 35px;
+  border-bottom: 1px solid #C9C9C9; /*no*/
+  background-color: #FCFCFC;
+}
+.article-title-wrap,
+.article-classify{
+  padding-left: 18px;
+  padding-right: 18px;
+}
+.article-title{
+  padding-top: 35px;
+  padding-bottom: 35px;
+  font-size: 32px;
+  line-height: 52px;
+  color: #282828;
+}
+article .title-more{
+  padding-left: 42px;
+  position: relative;
+  font-size: 22px;
+  overflow: hidden;
+
+  .small-i{
+    padding-top: 1px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 28px;
+    height: 28px;
+    color: #fff;
+    text-align: center;
+  }
+}
+article img{
+  margin: 35px 0;
+}
+.article-classify{
+  padding-bottom: 35px;
+  margin-bottom: 28px;
+  background-color: #FCFCFC;
+  border-bottom: 1px solid #C9C9C9; /*no*/
+}
+.concat{
+  img {
+    margin-right: 18px;
+    width: 24px; /*no*/
+    height: 24px; /*no*/
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.companion{
+  @extend .browse;
+}
+.companion-item{
+  display: block;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #C9C9C9; /*no*/
+  color: #777777;
+  overflow: hidden;
+}
+.companion-logo{
+  width: 180px;
+  height: 120px;
+  border: 1px solid #C9C9C9; /*no*/
+  background-position: 0 0;
+  background-size: cover;
+  background-color: #fff;
+  background-repeat: no-repeat;
+}
+.companion-info{
+  padding-right: 18px;
+  width: 406px;
+  height: 120px;
+}
+.info-title{
+  padding-bottom: 15px;
+  font-size: 32px;
+  color: #222;
+}
+.info-summary{
+  line-height: 32px;
+}
+
+.companion-section{
+  font-size: 28px;
+  padding: 50px 20px;
+  line-height: 62px;
+  color: #777;
+}

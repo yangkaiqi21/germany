@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>资讯详情</title>
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <link rel="stylesheet" href="__PUBLIC__/germany/css/layout.debug.css">
+</head>
+<body style="background-color: #F5F5F5">
+<article>
+    <header class="article-title-wrap">
+        <h1 class="article-title">{$data['title']}</h1>
+        <div class="title-more">
+                <span class="f-l">
+                    {$data['category']}
+                </span>
+            <div class="supplier f-r">
+                供应商：{$data['supplier']}
+            </div>
+            <div class="small-i diamonds-yellow">{$data['gongqiu']==1?'供':'求'}</div>
+        </div>
+    </header>
+    <section class="article-classify">
+        <h3 class="article-title">服务内容介绍</h3>
+        <p>{$data['content']}</p>
+    </section>
+    <section class="article-classify">
+        <h3 class="article-title">供应商介绍</h3>
+        <p>{$data['description']}</p>
+    </section>
+    <section class="article-classify">
+        <h3 class="article-title">联系方式</h3>
+        <ul class="concat">
+            <li><img src="__PUBLIC__/germany/images/concat-icon1.png" alt="">姓名: {$data['supplier_name']}</li>
+            <li><img src="__PUBLIC__/germany/images/concat-icon2.png" alt="">电话: {$data['mobile']}</li>
+        </ul>
+    </section>
+</article>
+</body>
+</html>
