@@ -208,7 +208,7 @@ button {
   text-decoration: none;
 }
 
-.browse-click > a:hover + ul {
+.browse-click:hover ul {
   display: block;
 }
 
@@ -226,6 +226,7 @@ button {
 .browse-click ul {
   display: none;
   position: absolute;
+  z-index: 10;
   right: -0.3125rem;
   top: 0.703125rem;
   padding-top: 0.65625rem;
